@@ -1,0 +1,124 @@
+{
+    "reviews": [
+      {
+        "professor": "Dr. Emily Thompson",
+        "subject": "Physics",
+        "stars": 4,
+        "review": "Dr. Thompson explains complex concepts clearly and is always willing to help outside of class."
+      },
+      {
+        "professor": "Prof. Michael Chen",
+        "subject": "Computer Science",
+        "stars": 5,
+        "review": "Brilliant instructor! Prof. Chen's passion for coding is contagious. Challenging but rewarding classes."
+      },
+      {
+        "professor": "Dr. Sarah Johnson",
+        "subject": "Biology",
+        "stars": 3,
+        "review": "Dr. Johnson knows her stuff, but the pace of the class can be overwhelming at times."
+      },
+      {
+        "professor": "Prof. David Martinez",
+        "subject": "History",
+        "stars": 4,
+        "review": "Engaging lectures and thought-provoking discussions. Prof. Martinez brings history to life."
+      },
+      {
+        "professor": "Dr. Rachel Kim",
+        "subject": "Psychology",
+        "stars": 5,
+        "review": "Dr. Kim is an exceptional educator. Her research-based approach and real-world examples are invaluable."
+      },
+      {
+        "professor": "Prof. James Wilson",
+        "subject": "Mathematics",
+        "stars": 2,
+        "review": "Prof. Wilson's teaching style is too abstract. More practical examples would help."
+      },
+      {
+        "professor": "Dr. Laura Gonzalez",
+        "subject": "Chemistry",
+        "stars": 4,
+        "review": "Challenging course, but Dr. Gonzalez's enthusiasm makes it enjoyable. Great lab sessions."
+      },
+      {
+        "professor": "Prof. Robert Taylor",
+        "subject": "English Literature",
+        "stars": 3,
+        "review": "Prof. Taylor's knowledge is vast, but his grading can be inconsistent and harsh."
+      },
+      {
+        "professor": "Dr. Olivia Patel",
+        "subject": "Economics",
+        "stars": 5,
+        "review": "Dr. Patel's classes are a perfect blend of theory and real-world applications. Highly recommended!"
+      },
+      {
+        "professor": "Prof. Thomas Lee",
+        "subject": "Philosophy",
+        "stars": 4,
+        "review": "Thought-provoking lectures. Prof. Lee encourages critical thinking and lively debates."
+      },
+      {
+        "professor": "Dr. Nicole Adams",
+        "subject": "Sociology",
+        "stars": 3,
+        "review": "Interesting content, but Dr. Adams could improve on making the material more engaging."
+      },
+      {
+        "professor": "Prof. William Brown",
+        "subject": "Political Science",
+        "stars": 4,
+        "review": "Prof. Brown's balanced approach to controversial topics is commendable. Fair and knowledgeable."
+      },
+      {
+        "professor": "Dr. Jessica Liu",
+        "subject": "Art History",
+        "stars": 5,
+        "review": "Dr. Liu's passion for art is infectious. Her lectures are like taking a journey through time."
+      },
+      {
+        "professor": "Prof. Daniel Green",
+        "subject": "Environmental Science",
+        "stars": 4,
+        "review": "Prof. Green makes complex environmental issues accessible. Great field trips and hands-on projects."
+      },
+      {
+        "professor": "Dr. Amanda White",
+        "subject": "Linguistics",
+        "stars": 3,
+        "review": "Dr. White is knowledgeable, but the course structure could use some improvement."
+      },
+      {
+        "professor": "Prof. Christopher Davis",
+        "subject": "Business Administration",
+        "stars": 5,
+        "review": "Prof. Davis brings real-world experience to the classroom. His insights are invaluable."
+      },
+      {
+        "professor": "Dr. Sophia Rodriguez",
+        "subject": "Anthropology",
+        "stars": 4,
+        "review": "Dr. Rodriguez's fieldwork experiences enrich her lectures. Challenging but rewarding course."
+      },
+      {
+        "professor": "Prof. Kevin O'Brien",
+        "subject": "Music Theory",
+        "stars": 2,
+        "review": "Prof. O'Brien's teaching style is too rigid. More flexibility in assignments would be appreciated."
+      },
+      {
+        "professor": "Dr. Maria Sanchez",
+        "subject": "Neuroscience",
+        "stars": 5,
+        "review": "Dr. Sanchez is at the forefront of her field. Her classes are demanding but incredibly rewarding."
+      },
+      {
+        "professor": "Prof. Andrew Peterson",
+        "subject": "Statistics",
+        "stars": 3,
+        "review": "Prof. Peterson knows his subject well, but could work on making the material more accessible to non-math majors."
+      }
+    ]
+  }
