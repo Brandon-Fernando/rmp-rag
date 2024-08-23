@@ -1,124 +1,68 @@
 {
     "reviews": [
-      {
-        "professor": "Dr. Emily Thompson",
-        "subject": "Physics",
-        "stars": 4,
-        "review": "Dr. Thompson explains complex concepts clearly and is always willing to help outside of class."
-      },
-      {
-        "professor": "Prof. Michael Chen",
-        "subject": "Computer Science",
-        "stars": 5,
-        "review": "Brilliant instructor! Prof. Chen's passion for coding is contagious. Challenging but rewarding classes."
-      },
-      {
-        "professor": "Dr. Sarah Johnson",
-        "subject": "Biology",
-        "stars": 3,
-        "review": "Dr. Johnson knows her stuff, but the pace of the class can be overwhelming at times."
-      },
-      {
-        "professor": "Prof. David Martinez",
-        "subject": "History",
-        "stars": 4,
-        "review": "Engaging lectures and thought-provoking discussions. Prof. Martinez brings history to life."
-      },
-      {
-        "professor": "Dr. Rachel Kim",
-        "subject": "Psychology",
-        "stars": 5,
-        "review": "Dr. Kim is an exceptional educator. Her research-based approach and real-world examples are invaluable."
-      },
-      {
-        "professor": "Prof. James Wilson",
-        "subject": "Mathematics",
-        "stars": 2,
-        "review": "Prof. Wilson's teaching style is too abstract. More practical examples would help."
-      },
-      {
-        "professor": "Dr. Laura Gonzalez",
-        "subject": "Chemistry",
-        "stars": 4,
-        "review": "Challenging course, but Dr. Gonzalez's enthusiasm makes it enjoyable. Great lab sessions."
-      },
-      {
-        "professor": "Prof. Robert Taylor",
-        "subject": "English Literature",
-        "stars": 3,
-        "review": "Prof. Taylor's knowledge is vast, but his grading can be inconsistent and harsh."
-      },
-      {
-        "professor": "Dr. Olivia Patel",
-        "subject": "Economics",
-        "stars": 5,
-        "review": "Dr. Patel's classes are a perfect blend of theory and real-world applications. Highly recommended!"
-      },
-      {
-        "professor": "Prof. Thomas Lee",
-        "subject": "Philosophy",
-        "stars": 4,
-        "review": "Thought-provoking lectures. Prof. Lee encourages critical thinking and lively debates."
-      },
-      {
-        "professor": "Dr. Nicole Adams",
-        "subject": "Sociology",
-        "stars": 3,
-        "review": "Interesting content, but Dr. Adams could improve on making the material more engaging."
-      },
-      {
-        "professor": "Prof. William Brown",
-        "subject": "Political Science",
-        "stars": 4,
-        "review": "Prof. Brown's balanced approach to controversial topics is commendable. Fair and knowledgeable."
-      },
-      {
-        "professor": "Dr. Jessica Liu",
-        "subject": "Art History",
-        "stars": 5,
-        "review": "Dr. Liu's passion for art is infectious. Her lectures are like taking a journey through time."
-      },
-      {
-        "professor": "Prof. Daniel Green",
-        "subject": "Environmental Science",
-        "stars": 4,
-        "review": "Prof. Green makes complex environmental issues accessible. Great field trips and hands-on projects."
-      },
-      {
-        "professor": "Dr. Amanda White",
-        "subject": "Linguistics",
-        "stars": 3,
-        "review": "Dr. White is knowledgeable, but the course structure could use some improvement."
-      },
-      {
-        "professor": "Prof. Christopher Davis",
-        "subject": "Business Administration",
-        "stars": 5,
-        "review": "Prof. Davis brings real-world experience to the classroom. His insights are invaluable."
-      },
-      {
-        "professor": "Dr. Sophia Rodriguez",
-        "subject": "Anthropology",
-        "stars": 4,
-        "review": "Dr. Rodriguez's fieldwork experiences enrich her lectures. Challenging but rewarding course."
-      },
-      {
-        "professor": "Prof. Kevin O'Brien",
-        "subject": "Music Theory",
-        "stars": 2,
-        "review": "Prof. O'Brien's teaching style is too rigid. More flexibility in assignments would be appreciated."
-      },
-      {
-        "professor": "Dr. Maria Sanchez",
-        "subject": "Neuroscience",
-        "stars": 5,
-        "review": "Dr. Sanchez is at the forefront of her field. Her classes are demanding but incredibly rewarding."
-      },
-      {
-        "professor": "Prof. Andrew Peterson",
-        "subject": "Statistics",
-        "stars": 3,
-        "review": "Prof. Peterson knows his subject well, but could work on making the material more accessible to non-math majors."
-      }
+        {
+            "professor": "Shery Chanis",
+            "subject-department": "Geography department",
+            "rating": "5",
+            "difficulty": "100%",
+            "student_reviews": [
+                "cool teacher. easy A"
+            ]
+        },
+        {
+            "professor": "Jerusha Yoder",
+            "subject-department": "English department",
+            "rating": "4",
+            "difficulty": "67%",
+            "student_reviews": [
+                "Mrs.Yoder is a wonderful professor. She is helpful and always available if you need her help. She provides clear and concise instruction when it comes to work. She is there to help you learn to love writing and how to execute it properly. She will teach and help you become a better writer.",
+                "Way to strict on attendance",
+                "Very good teacher would take again"
+            ]
+        },
+        {
+            "professor": "Christina Chung",
+            "subject-department": "Gender, Women, & Sexuality Studies department",
+            "rating": "5",
+            "difficulty": "100%",
+            "student_reviews": [
+                "Christina is absolutely amazing, and one of the best teachers I've had at UW! She is knowledgable, funny, kind, and made our classes a safe and positive place. There is not too much work other than a final group project, but there are a fair amount of readings. 10/10 recommend!",
+                "Professor Chung is amazing! I loved having her for GWSS 200 so I had to take her other course. There are weekly discussions and lectures. In-Class days are mandatory for discussion. There is 1 group project. She breaks down terms and really wants everyone to dive deep into the work."
+            ]
+        },
+        {
+            "professor": "Lisa Soranaka",
+            "subject-department": "Fine Arts department",
+            "rating": "3.4",
+            "difficulty": "100%",
+            "student_reviews": [
+                "I had Professor Soranaka for beginning ceramics. Although I didn't need the credit, I wanted to take a fun class and thought this was a good choice. Boy was I wrong. Professor had no clue how to teach. She just left us to get our hands dirty and then would say our ceramics were too small or not symmetrical enough. NOT VART 230! VART 141",
+                "TAKE LISA FOR ART CORE. Lisa is super chill and her Digital Art Foundations course is exactly what a core art course should be. Projects are interesting and don't take up that much time. Had a fun time with this course.",
+                "I loved getting to take a class with Lisa! She's funny and super chill. She also showed us a lot of really neat 21st century artists that we could get inspo from for our own 3D design projects. Gives creative freedom and solid feedback."
+            ]
+        },
+        {
+            "professor": "Ja'Nya Jenoch",
+            "subject-department": "Sociology department",
+            "rating": "3.7",
+            "difficulty": "100%",
+            "student_reviews": [
+                "Easy class, Her directions are not clear and she grades super critically. Her grading style can be a bit frustrating considering her instructions are never clear, I was marked for grammar but a lot of her instructions are grammatically inaccurate, ironically. overall easy class but if you feel confused email her for clarity or she will mark you.",
+                "I took her Statistics for Social Sciences class. She's a delightful person but her teaching style just doesn't work for me. She's very disorganized and would often say things about the material that were just incorrect. The class was pretty easy but I think I would've learned a lot more with a different professor.",
+                "Great teacher, enjoy her class, would take more classes with her. Our class walked to the campus labyrinth one day instead of doing our class work and we enjoyed the outside instead and learned about the labyrinth.",
+                "Is unclear with directions, but the class was very interesting. Very nice teacher. Make sure you have good notes for the test because she tests you on class presentations. Overall very easy class bc minimum work but the assignments are worth a lot.",
+                "I took her during the summer. The class is easy and not too many assignments. The only thing I could say is that she doesn't respond, you won't hear from her throughout the semester. Also she doesn't grade anything till last minute. So you wont know your grade until grades are final which is crazy. The work is based on quizzes to be honest.",
+                "I took SYG2000 in the Spring semester, she is so cool, knowledgeable, and wants to make classes a little bit different than the others, she implements cool features besides the regular zoom ones. She was very flexible with dates as long as you let her know with anticipation. Great class, great discussions !!"
+            ]
+        },
+        {
+            "professor": "Mariah Schlis-Elias",
+            "subject-department": "Biology department",
+            "rating": "4",
+            "difficulty": "100%",
+            "student_reviews": [
+                "I took Dr. Schlis-Elias's bio lab and it was pretty fun. It was all virtual and you definitely have to show up to class, but she gives plenty of time to complete the labs. She is very caring about her students and good at explaining the material."
+            ]
+        }
     ]
-  }
+}

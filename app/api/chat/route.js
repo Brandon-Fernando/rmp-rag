@@ -41,7 +41,7 @@ export async function POST(req){
         apiKey: process.env.PINECONE_API_KEY, 
     })
 
-    const index = pc.index('rag').namespace('ns1')
+    const index = pc.index('rag').namespace('ns')
     const openai = new OpenAI()
 
     const text = data[data.length - 1].content
@@ -58,15 +58,35 @@ export async function POST(req){
     })
 
     let resultString = '\n\nReturned results from vector db (done automatically): '
+    // matches.forEach((match) => {
+    //     // Accessing metadata based on the provided structure
+    //     const metadata = match.metadata;
+    //     resultString += `\n
+    //     Professor: ${metadata.professor}
+    //     Department: ${metadata['subject-department']}
+    //     Rating: ${metadata.rating}
+    //     Difficulty: ${metadata.difficulty}
+    //     Reviews: ${metadata.student_reviews}
+    //     `;
+
+    //     //Iterating over student_reviews array
+    //     metadata.student_reviews.forEach((review, index) => {
+    //         resultString += `    ${index + 1}. ${review}\n`;
+    //     });
+
+    //     resultString += `\n\n`;
+    // })
     results.matches.forEach((match) => {
-        resultString+= `\n
-        Professor: ${match.id}
-        Review: ${match.metadata.stars}
-        Subject: ${match.metadata.subject}
-        Stars ${match.metadata.stars}
-        \n\n
-        `
-    })
+        // Accessing metadata based on the provided structure
+        const metadata = match.metadata;
+        resultString += `\n
+        Professor: ${metadata.professor}
+        Department: ${metadata['subject-department']}
+        Rating: ${metadata.rating}
+        Difficulty: ${metadata.difficulty}
+        Reviews: ${metadata.student_reviews}
+        `;
+    });
 
     const lastMessage = data[data.length - 1]
     const lastMessageContent = lastMessage.content + resultString

@@ -1,7 +1,8 @@
 'use client'
 import { Button, TextField, Box, Stack } from "@mui/material";
 import Image from "next/image";
-import { useState } from "react";
+import React, { useState } from "react";
+
 
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
   ])
 
 const [message, setMessage] = useState('')
+const [statusMessage, setStatusMessage] = useState('');
 
 
 const sendMessage = async () => {
@@ -51,8 +53,29 @@ const sendMessage = async () => {
       return reader.read().then(processText)
     })
   })
-
 }
+
+
+const handleSubmit = async () => {
+  const link = document.getElementById('linkInput').value;
+  if (link) {
+    const response = await fetch('/api/processLink', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ link }),
+    });
+
+    if (response.ok) {
+      setStatusMessage('Link processed successfully!');
+    } else {
+      setStatusMessage('Failed to process the link.');
+    }
+  } else {
+    setStatusMessage('Please enter a link.');
+  }
+};
+
+
   return (
     <Box
       width="100vw"
@@ -61,6 +84,18 @@ const sendMessage = async () => {
       flexDirection="column"
       justifyContent="center"
       alignItems="center">
+        <div>
+          <h1>Enter a Rate My Professor Link</h1>
+          <input id="linkInput" type="text" placeholder="Enter link here" />
+          <button onClick={handleSubmit}>Submit</button>
+          <Box
+            ml={2}
+            color={statusMessage.includes('Failed') ? 'error.main' : 'success.main'}
+            fontWeight="bold"
+          >
+            {statusMessage}
+          </Box>
+        </div>
         <Stack
           direction="column"
           width="500px"
@@ -111,3 +146,5 @@ const sendMessage = async () => {
     </Box>
   );
 }
+
+
