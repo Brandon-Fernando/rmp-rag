@@ -18,6 +18,8 @@ def scrapeReviews(profLink):
     
     try:
         professor_fname = soup.find('div', class_='NameTitle__Name-dowf0z-0 cfjPUG').text.strip()
+        professor_lname = soup.find('span', class_='NameTitle__LastNameWrapper-dowf0z-2 glXOHH').text.strip()
+        prof_name = professor_fname + " " + professor_lname
         rating = soup.find('div', class_='RatingValue__Numerator-qw8sqy-2 liyUjw').text.strip()
 
         difficulty = soup.find('div', class_='FeedbackItem__FeedbackNumber-uof32n-1 kkESWs').text.strip()
@@ -28,7 +30,7 @@ def scrapeReviews(profLink):
             studentReviews.append(review_text)
 
         formatted_reviews = {
-            "professor": professor_fname,
+            "professor": prof_name,
             "subject-department": subject,
             "rating": rating,
             "difficulty": difficulty,

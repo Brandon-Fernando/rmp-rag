@@ -1,7 +1,8 @@
 'use client'
-import { Button, TextField, Box, Stack } from "@mui/material";
+import { Button, TextField, Box, Stack, AppBar, Toolbar, Container, Typography } from "@mui/material";
 import Image from "next/image";
 import React, { useState } from "react";
+//import { Pinecone } from "@pinecone-database/pinecone";
 
 
 
@@ -14,7 +15,15 @@ export default function Home() {
   ])
 
 const [message, setMessage] = useState('')
-const [statusMessage, setStatusMessage] = useState('');
+const [professors, setProfessors] = useState([])
+
+// const pc = new Pinecone({
+//   apiKey: process.env.PINECONE_API_KEY,
+// })
+
+// const index = pc.index('rag').namespace('ns')
+
+
 
 
 const sendMessage = async () => {
@@ -77,73 +86,225 @@ const handleSubmit = async () => {
 
 
   return (
-    <Box
-      width="100vw"
-      height="100vh"
-      display="flex"
-      flexDirection="column"
-      justifyContent="center"
-      alignItems="center">
-        <div>
-          <h1>Enter a Rate My Professor Link</h1>
-          <input id="linkInput" type="text" placeholder="Enter link here" />
-          <button onClick={handleSubmit}>Submit</button>
-          <Box
-            ml={2}
-            color={statusMessage.includes('Failed') ? 'error.main' : 'success.main'}
-            fontWeight="bold"
-          >
-            {statusMessage}
-          </Box>
-        </div>
-        <Stack
-          direction="column"
-          width="500px"
-          height="700px"
-          border="1px solid black"
-          p={2}
-          spacing={3}>
-            <Stack
-              direction="column"
-              spacing={2}
-              flexGrow={1}
-              overflow="auto"
-              maxHeight="100%">
-            {messages.map((message, index) => (
-              <Box
-                key={index}
-                display="flex"
-                justifyContent={message.role === 'assistant' ? 'flex-start' : 'flex-end'}>
-                <Box
-                  bgcolor={
-                    message.role === 'assistant' ? 'primary.main' : 'secondary.main'
-                  }
-                  color = "white"
-                  borderRadius={16}
-                  p={3}>
-                    {message.content}
-                </Box>
-              </Box>
-            ))}
-            </Stack>
-            <Stack
-              direction = "row" spacing ={2}>
-                <TextField
-                  label ="Message"
-                  fullWidth
-                  value={message}
-                  onChange={(e) => {
-                    setMessage(e.target.value)
-                  }}/>
-                  <Button
-                    variant="contained" 
-                    onClick={sendMessage}>
-                      Send
-                  </Button>
-              </Stack>
-        </Stack>
+    <Container disableGutters sx={{minWidth: '100vw', minHeight: '100vh', display: 'flex', flexDirection: 'column'}}>
 
-    </Box>
+      {/* header */}
+      <AppBar position="absolute">
+        <Toolbar sx={{bgcolor: 'black', padding:"8px"}}>
+            <Image src="/rmp-logo.png" alt="Logo" width={125} height={50} />
+        </Toolbar>
+      </AppBar>
+
+
+
+      <Box
+        mt="66px"
+        display="flex"
+        flexDirection="row"
+        // alignItems="center"
+        // justifyContent="center"
+        width="100%"
+        sx={{flex: 1}}
+        p={5}
+        gap={10}
+        >
+
+          {/* add professors / show professors */}
+          <Box
+            width={510}
+            display="flex"
+            flexDirection="column"
+            >
+            <Typography variant="h5" fontWeight={"bold"}>
+              Add Your Professors
+            </Typography>
+            <Box
+              mt={1}
+              border="3px solid black"
+              borderRadius={4}
+              boxShadow= "6px 6px 6px rgba(0, 0, 0, 1)"
+              height={150}
+              bgcolor="#D9D9D9"
+              display="flex"
+              flexDirection="row"
+              alignItems="center"
+              justifyContent="center"
+              gap={3}>
+                <TextField 
+                  id="linkInput"
+                  type="text"
+                  placeholder="Enter Professor Link"
+                  sx={{
+                    bgcolor: "white",
+                    width: "60%",
+                    '& .MuiOutlinedInput-root': {
+                        "& fieldset": {
+                            border: "3px solid black", 
+                            boxShadow: "4px 4px 4px rgba(0, 0, 0, 1)"
+                        },
+                        "&:hover fieldset": {
+                            border: "2px solid black",
+                            boxShadow: "4px 4px 4px rgba(0, 0, 0, 1)"
+                        },
+                        "&.Mui-focused fieldset": {
+                            border: "3px solid black", 
+                            boxShadow: "4px 4px 4px rgba(0, 0, 0, 1)"
+                        },
+                    }
+                }}/>
+                <Button
+                  variant="contained"
+                  onClick={handleSubmit}
+                  disableRipple
+                  sx={{
+                    textTransform: "none", 
+                    background: "#0900FF",
+                    borderRadius: 9, 
+                    width: 100, 
+                    height: 50, 
+                    fontWeight: "bold", 
+                    border: "3px solid black", 
+                    boxShadow: "4px 4px 4px rgba(0, 0, 0, 0.7)",
+                    '&:hover': {
+                      background: "#0900FE", 
+                      border: "3px solid black", 
+                      boxShadow: "4px 4px 4px rgba(0, 0, 0, 1)",
+                    }, 
+                    '&:active': {
+                      background: "#0900FE", 
+                      border: "2px solid black", 
+                      boxShadow: "4px 4px 4px rgba(0, 0, 0, 0.6)"
+                    }
+                  }}
+                  >
+                    Add
+                </Button>
+            </Box>
+
+            <Typography variant="h5" fontWeight={"bold"} mt={4}>
+              Professors Added
+            </Typography>
+            <Stack
+              mt={1}
+              border="3px solid black"
+              borderRadius={4}
+              boxShadow="6px 6px 6px rgba(0, 0, 0, 1)"
+              bgcolor="#D9D9D9"
+              sx={{flex: 1}}
+              >
+
+            </Stack>
+          </Box>
+
+          {/* AI chat */}
+          <Box
+            display="flex"
+            flexDirection="column"
+            sx={{flex: 1}}
+            >
+              <Typography variant="h5" fontWeight={"bold"}>
+                Ask AI
+              </Typography>
+
+              <Stack 
+                mt={1}
+                border="3px solid black"
+                borderRadius={4}
+                boxShadow="6px 6px 6px rgba(0, 0, 0, 1)"
+                bgcolor="#D9D9D9"
+                sx={{flex: 1}}
+                p={3}
+                >
+                  <Stack
+                    direction="column"
+                    spacing={2}
+                    flexGrow={1}
+                    overflow="auto"
+                    maxHeight="100%">
+                    {messages.map((message, index) => (
+                      <Box
+                        key={index}
+                        display="flex"
+                        justifyContent={message.role === 'assistant' ? 'flex-start' : 'flex-end'}>
+                        <Box
+                          bgcolor={
+                          message.role === 'assistant' ? 'white' : '#0900FF'
+                          }
+                          color={
+                            message.role === 'assistant' ? 'black' : 'white'
+                          }
+                          fontSize={14}
+                          border="3px solid black"
+                          boxShadow="4px 4px 4px rgba(0, 0, 0, 1)"
+                          borderRadius={4}
+                          px={3}
+                          py={2}
+                          >
+                            {message.content}
+                        </Box>
+                      </Box>
+                    ))}
+                    </Stack>
+                    <Stack
+                      direction = "row" spacing ={2}>
+                      <TextField
+                        placeholder="Ask here"
+                        fullWidth
+                        value={message}
+                        onChange={(e) => {
+                          setMessage(e.target.value)
+                        }}
+                        sx={{
+                          bgcolor: "white",
+                          '& .MuiOutlinedInput-root': {
+                              "& fieldset": {
+                                  border: "3px solid black", 
+                                  boxShadow: "4px 4px 4px rgba(0, 0, 0, 1)"
+                              },
+                              "&:hover fieldset": {
+                                  border: "2px solid black",
+                                  boxShadow: "4px 4px 4px rgba(0, 0, 0, 1)"
+                              },
+                              "&.Mui-focused fieldset": {
+                                  border: "3px solid black", 
+                                  boxShadow: "4px 4px 4px rgba(0, 0, 0, 1)"
+                              },
+                          }
+                        }}/>
+                      <Button
+                        variant="contained" 
+                        onClick={sendMessage}
+                        disableRipple
+                        sx={{
+                          textTransform: "none", 
+                          background: "#0900FF",
+                          borderRadius: 9, 
+                          width: 100, 
+                          height: 50, 
+                          fontWeight: "bold", 
+                          border: "3px solid black", 
+                          boxShadow: "4px 4px 4px rgba(0, 0, 0, 0.7)",
+                          '&:hover': {
+                            background: "#0900FE", 
+                            border: "3px solid black", 
+                            boxShadow: "4px 4px 4px rgba(0, 0, 0, 1)",
+                          }, 
+                          '&:active': {
+                            background: "#0900FE", 
+                            border: "2px solid black", 
+                            boxShadow: "4px 4px 4px rgba(0, 0, 0, 0.6)"
+                          }
+                        }}>
+                        Send
+                      </Button>
+                    </Stack>
+              </Stack>
+              
+          </Box>
+
+
+      </Box>
+  </Container>
   );
 }
 

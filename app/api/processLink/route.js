@@ -10,8 +10,6 @@ export async function POST(req) {
     try {
       // Run the Python script with the provided link
       const { stdout, stderr } = await execPromise(`python3 load.py ${link}`);
-      //const { stdout, stderr } = await execPromise(`source ${venvPath}/bin/activate && python ${scriptPath} ${link}`);
-
       
       // Handle any output or errors from the Python script
       if (stderr) {
